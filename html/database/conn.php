@@ -1,8 +1,8 @@
 <?php
 $servername = "host.docker.internal";
-$username = "kim";
-$password = "json";
-$mysql_database = 'myDB';
+$username = "Hwan";
+$password = "159753";
+$mysql_database = 'HwansDB';
 $mysql_port = '52000';
 $mysql_charset = 'UTF8';
 

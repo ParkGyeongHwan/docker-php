@@ -17,10 +17,10 @@ services:
     image: mysql:5.7
     platform: linux/x86_64
     environment:
-      MYSQL_ROOT_PASSWORD: 'json'
-      MYSQL_USER: 'kim'
-      MYSQL_PASSWORD: 'json'
-      MYSQL_DATABASE: 'myDB'
+      MYSQL_ROOT_PASSWORD: '159753'
+      MYSQL_USER: 'Hwan'
+      MYSQL_PASSWORD: '159753'
+      MYSQL_DATABASE: 'HwansDB'
     volumes:
       - ./data:/var/lib/mysql
     ports:
