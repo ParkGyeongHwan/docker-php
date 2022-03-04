@@ -78,4 +78,16 @@ class Board_model extends CI_Model {
         ");
     
     }
+    public function board_delete($id) {
+
+        $this->db->query("
+        UPDATE 
+            ci_board 
+        SET 
+            status = 1 
+        WHERE 
+            _id = ".$id."
+        ");
+    }
+
 }
