@@ -1,7 +1,7 @@
-제목 : ㅁㅁ <br />
-작성자 : 남 <br />
+제목 : <?php echo $result->title; ?> <br />
+작성자 : <?php echo $result->name?> <br />
 내용 :  <br />
-ㅁㄴㅇㄹㅁㅇㄴㄹㅁㅇㅁㄹㅇ너라ㅣㅁㄴㅇㄹ
+<?php echo nl2br($result->content)?>
 <br /> <br />
 
 
