@@ -65,4 +65,17 @@ class Board_model extends CI_Model {
         ");
 
     }
+    public function board_update($title,$content,$id) {
+
+        $data = $this->db->query("
+        UPDATE 
+            ci_board
+        SET
+            title = '".$title."',
+            content = '".$content."'
+        WHERE
+        _id = ".$id."
+        ");
+    
+    }
 }
