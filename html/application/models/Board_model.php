@@ -89,5 +89,38 @@ class Board_model extends CI_Model {
             _id = ".$id."
         ");
     }
+    public function comment_list($board_id)
+    {
+        $data = $this->db->query("
+            select
+                _id,
+                content,
+                (select email from ci_member where _id = ci_comment.member_id) as name
+            from
+                ci_comment as ci_comment
+            where
+                status = 0 and
+                board_id = ".$board_id."
+        ");
 
+        return  $data->result_array();
+    }
+    public function comment_delete($id){
+        $this->db->query("
+            UPDATE 
+                ci_comment
+            SET 
+                status = 1 
+            WHERE 
+                _id = ".$id."
+        ");
+    }
+    public function comment_insert($board_id,$content) {
+        $this->db->query("
+        INSERT INTO ci_comment
+        (board_id, content)
+        values 
+        ('".$board_id."','".$content."')
+    ");
+    }
 }

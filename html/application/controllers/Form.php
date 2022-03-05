@@ -35,4 +35,24 @@ class Form extends CI_Controller {
 
 		header("Location: http://127.0.0.1:9001/index.php/board/list");
 	}
+	private function comment_list($board_id)
+	{ 
+		$data['result'] = $this->Board_model->comment_list($board_id);
+		$this->load->view("comment/list",$data);
+	}
+	public function comment_delete() {
+		$id = $this->input->get('id');
+		$board_id = $this->input->get('board_id');
+		$this->Board_model->comment_delete($id);
+
+		header("Location: http://127.0.0.1:9001/index.php/board/view?id=".$board_id);		
+	}
+	public function comment_insert() {
+		$board_id = $this->input->POST('board_id');
+		$content = $this->input->POST('content');
+		
+		$this->Board_model->comment_insert($board_id,$content);
+
+		header("Location: http://127.0.0.1:9001/index.php/board/view?id=".$board_id);		
+	}
 }
